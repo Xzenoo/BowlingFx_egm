@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="projet.bowling.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+<VBox alignment="CENTER" prefHeight="462.0" prefWidth="416.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="projet.bowling.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <Label text="Bowlot">
+         <font>
+            <Font name="System Bold Italic" size="21.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.990521327014218" startX="0.8767772511848342" startY="0.1611374407582939">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color green="0.17916665971279144" blue="0.5657894611358643" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label text="Email : " />
+      <TextField />
+      <Label text="Mot de Passe :" />
+      <PasswordField />
+      <Label disable="true" text="identifiant incorrect" textFill="RED" />
+      <Button mnemonicParsing="false" text="Validez" />
+      <Button mnemonicParsing="false" text="Inscription" />
+      <Button mnemonicParsing="false" text="Mot de passe oublié" />
+   </children>
 </VBox>
