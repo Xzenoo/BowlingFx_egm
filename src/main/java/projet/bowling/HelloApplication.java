@@ -19,7 +19,7 @@ public class HelloApplication extends Application {
     public void start(Stage firstStage) throws IOException {
         stage = firstStage;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(
-                "/projet/bowling/helloController.fxml"));
+                "/projet/bowling/hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Bowling!");
         stage.setScene(scene);
