@@ -19,9 +19,9 @@ public class HelloApplication extends Application {
     public void start(Stage firstStage) throws IOException {
         stage = firstStage;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(
-                "/projet/todolistfx/hello-view.fxml"));
+                "/projet/bowling/helloController.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("ToDoList");
+        stage.setTitle("Bowling!");
         stage.setScene(scene);
         stage.show();
     }
