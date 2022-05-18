@@ -12,4 +12,6 @@ module projet.bowling {
 
     opens projet.bowling to javafx.fxml;
     exports projet.bowling;
+    exports apply;
+    opens apply to javafx.fxml;
 }
