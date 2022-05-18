@@ -1,4 +1,4 @@
-package projet.bowling;
+package apply;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,14 +11,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Optional;
 
-public class HelloApplication extends Application {
+public class StartApplication extends Application {
 
     private static Stage stage;
 
     @Override
     public void start(Stage firstStage) throws IOException {
         stage = firstStage;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(
+        FXMLLoader fxmlLoader = new FXMLLoader(StartApplication.class.getResource(
                 "/projet/bowling/hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Bowling!");
@@ -33,7 +33,7 @@ public class HelloApplication extends Application {
     }
 
     public static void changeScene(String fichierFxml,String titre , Object controller){
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fichierFxml+".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(StartApplication.class.getResource(fichierFxml+".fxml"));
         Scene scene = null;
         try {
             fxmlLoader.setController(controller);
@@ -46,7 +46,7 @@ public class HelloApplication extends Application {
         }
     }
     public static void changeScene(String fichierFxml, String titre){
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fichierFxml+".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(StartApplication.class.getResource(fichierFxml+".fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load());

@@ -112,7 +112,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>projet.bowling/projet.bowling.HelloApplication</mainClass>
+                            <mainClass>projet.bowling/apply.StartApplication</mainClass>
                         </configuration>
                     </execution>
                 </executions>
