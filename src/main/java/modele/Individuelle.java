@@ -1,4 +1,4 @@
 package modele;
 
-public class Individuelle {
+public class Individuelle extends Competition{
 }
