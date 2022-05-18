@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import repository.PratiquantRepository;
 
-public class HelloController {
+public class ConnexionController {
 
     @FXML
     private Label LblErreur;
