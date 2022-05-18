@@ -28,7 +28,7 @@ public class PratiquantRepository {
             if (mesResultats.next()) {
                 int last_inserted_id =mesResultats.getInt("id_user");
                 pratiquant.setId_Pratiquant(last_inserted_id);
-                StartApplication.changeScene("/projet/bowling/accueil", "Bowling!", new accueilController(this.));
+                StartApplication.changeScene("/projet/bowling/accueil", "Bowling!", new accueilController(this));
                 System.out.println(pratiquant.getId_Pratiquant());
             }
         }catch (SQLException e){
