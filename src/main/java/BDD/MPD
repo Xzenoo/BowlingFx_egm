@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3307
--- Généré le : mer. 18 mai 2022 à 15:05
+-- Généré le : mer. 18 mai 2022 à 15:12
 -- Version du serveur :  10.4.13-MariaDB
 -- Version de PHP : 7.3.21
 
@@ -188,6 +188,7 @@ CREATE TABLE IF NOT EXISTS `pratiquant` (
   `ville` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `genre` varchar(10) NOT NULL,
+  `estAdmin` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_pratiquant`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
