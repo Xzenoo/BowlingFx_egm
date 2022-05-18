@@ -1,4 +1,4 @@
 package modele;
 
-public class Doublette {
+public class Doublette extends Competition{
 }
