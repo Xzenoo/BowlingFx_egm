@@ -3,7 +3,7 @@ package modele;
 public class Pratiquant {
 
 //      ===attribut===
-    private int idPratiquant;
+    private int id_Pratiquant;
     private String nom;
     private String prenom;
     private String adresse;
@@ -12,12 +12,12 @@ public class Pratiquant {
     private String genre;
 
 
-    public int getIdPratiquant() {
-        return idPratiquant;
+    public int getId_Pratiquant() {
+        return id_Pratiquant;
     }
 
-    public void setIdPratiquant(int idPratiquant) {
-        this.idPratiquant = idPratiquant;
+    public void setId_Pratiquant(int idPratiquant) {
+        this.id_Pratiquant = idPratiquant;
     }
 
     public String getNom() {
