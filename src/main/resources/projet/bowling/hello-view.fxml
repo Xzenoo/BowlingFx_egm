@@ -38,9 +38,9 @@
          </textFill>
       </Label>
       <Label text="Email : " />
-      <TextField />
+      <TextField fx:id="fldEmail" />
       <Label text="Mot de Passe :" />
-      <PasswordField />
+      <PasswordField fx:id="fldMdp" />
       <Label fx:id="LblErreur" text="identifiant incorrect" textFill="RED" visible="false" />
       <Button mnemonicParsing="false" onAction="#BtnConnexion" text="Validez" />
       <Button mnemonicParsing="false" onAction="#BtnInscription" text="Inscription" />

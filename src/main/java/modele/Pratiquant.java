@@ -6,10 +6,25 @@ public class Pratiquant {
     private int id_Pratiquant;
     private String nom;
     private String prenom;
-    private String adresse;
+    private int cp;
+    private String rue;
+    private String ville;
     private String email;
     private String mdp;
     private String genre;
+    private boolean estAdmin;
+
+    public Pratiquant(int id_pratiquant, String nom, String prenom, int cp, String rue, String ville, String email, String genre, boolean estAdmin) {
+        this.id_Pratiquant =id_pratiquant;
+        this.nom = nom;
+        this.prenom =prenom;
+        this.cp = cp;
+        this.rue = rue;
+        this.ville = ville;
+        this.email = email;
+        this.genre = genre;
+        this.estAdmin = estAdmin;
+    }
 
 
     public int getId_Pratiquant() {
@@ -36,12 +51,36 @@ public class Pratiquant {
         this.prenom = prenom;
     }
 
-    public String getAdresse() {
-        return adresse;
+    public int getCp() {
+        return cp;
     }
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
+    public void setCp(int cp) {
+        this.cp = cp;
+    }
+
+    public String getRue() {
+        return rue;
+    }
+
+    public void setRue(String rue) {
+        this.rue = rue;
+    }
+
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
+
+    public boolean isEstAdmin() {
+        return estAdmin;
+    }
+
+    public void setEstAdmin(boolean estAdmin) {
+        this.estAdmin = estAdmin;
     }
 
     public String getEmail() {

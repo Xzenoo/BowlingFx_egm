@@ -18,24 +18,23 @@ public class PratiquantRepository {
         coBdd =new Bdd();
     }
 
-    public void connexion(Pratiquant pratiquant) throws SQLException {
+    public Pratiquant connexion(String mail, String mdp) throws SQLException {
+        Pratiquant pratiquant = null;
         Bdd coBdd = new Bdd();
         PreparedStatement requeteSQL = coBdd.BddCo().prepareStatement("Select * from `Pratiquant` where mail=? and mdp=?");
         try{
-            requeteSQL.setString(1,pratiquant.getEmail());
-            requeteSQL.setString(2,pratiquant.getMdp());
+            requeteSQL.setString(1,mail);
+            requeteSQL.setString(2,mdp);
             ResultSet mesResultats = requeteSQL.executeQuery();
             if (mesResultats.next()) {
-                int last_inserted_id =mesResultats.getInt("id_user");
-                pratiquant.setId_Pratiquant(last_inserted_id);
-                StartApplication.changeScene("/projet/bowling/accueil", "Bowling!", new accueilController(this));
+                pratiquant = new Pratiquant(mesResultats.getInt("id_pratiquant"), mesResultats.getString("nom"), mesResultats.getString("prenom"),mesResultats.getInt("cp"),mesResultats.getString("rue"),mesResultats.getString("ville"),mesResultats.getString("email"),mesResultats.getString("genre"),mesResultats.getBoolean("estAdmin"));
                 System.out.println(pratiquant.getId_Pratiquant());
             }
         }catch (SQLException e){
             e.printStackTrace();
         }
 
-        return;
+        return pratiquant;
     }
 
 }
