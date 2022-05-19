@@ -14,7 +14,7 @@ public class Pratiquant {
     private String genre;
     private boolean estAdmin;
 
-    public Pratiquant(int id_pratiquant, String nom, String prenom, int cp, String rue, String ville, String email, String genre, boolean estAdmin) {
+    public Pratiquant(int id_pratiquant, String nom, String prenom, int cp, String rue, String ville, String email,String mdp, String genre, boolean estAdmin) {
         this.id_Pratiquant =id_pratiquant;
         this.nom = nom;
         this.prenom =prenom;
@@ -22,6 +22,7 @@ public class Pratiquant {
         this.rue = rue;
         this.ville = ville;
         this.email = email;
+        this.mdp = mdp;
         this.genre = genre;
         this.estAdmin = estAdmin;
     }
