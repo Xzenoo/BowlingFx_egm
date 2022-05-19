@@ -187,6 +187,7 @@ CREATE TABLE IF NOT EXISTS `pratiquant` (
   `rue` varchar(50) NOT NULL,
   `ville` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
+  `mdp` varchar(80) NOT NULL,
   `genre` varchar(10) NOT NULL,
   `estAdmin` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_pratiquant`)
