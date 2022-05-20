@@ -27,6 +27,16 @@ public class Pratiquant {
         this.estAdmin = estAdmin;
     }
 
+    public Pratiquant(String nom, String prenom, int cp, String rue, String ville, String email,String mdp, String genre) {
+        this.nom = nom;
+        this.prenom =prenom;
+        this.cp = cp;
+        this.rue = rue;
+        this.ville = ville;
+        this.email = email;
+        this.mdp = mdp;
+        this.genre = genre;
+    }
 
     public int getId_Pratiquant() {
         return id_Pratiquant;

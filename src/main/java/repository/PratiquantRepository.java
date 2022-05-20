@@ -37,7 +37,7 @@ public class PratiquantRepository {
         return pratiquant;
     }
 
-    public int inscription(String nom, String prenom, int cp, String rue, String ville, String email, String mdp, Boolean estAdmin)throws SQLException{
+    public int inscription()throws SQLException{
         Pratiquant pratiquant = null;
         Bdd coBdd = new Bdd();
         PreparedStatement requeteSql = coBdd.BddCo().prepareStatement("INSERT INTO `pratiquant` (nom,prenom,cp,rue,ville,email,mdp,genre,estAdmin) VALUES (?,?,?,?,?,?,?,?,?)");

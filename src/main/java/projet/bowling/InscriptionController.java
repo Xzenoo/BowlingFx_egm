@@ -52,8 +52,8 @@ public class InscriptionController {
 
     @FXML
     void Validez(ActionEvent event) {
-        PratiquantRepository pratiquantRepository = new PratiquantRepository();
-        Pratiquant p = pratiquantRepository.inscription(Nom.getText(),Prenom.getText(),Cp.getText(),Rue.getText(),Ville.getText(),Email.getText(),MDP.getText(),Genre.getSelectedToggle());
+        Pratiquant pratiquant = new Pratiquant(Nom.getText(),Prenom.getText(),Cp.getText(),Rue.getText(),Ville.getText(),Email.getText(),MDP.getText(),Genre.getSelectedToggle());
+        PratiquantRepository p = PratiquantRepository.inscription();
         if(p != null){
             StartApplication.changeScene("/projet/bowling/inscription","Inscription");
             System.out.println(p.getNom());
