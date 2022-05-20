@@ -1,10 +1,14 @@
 package projet.bowling;
 
+import apply.StartApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
+import modele.Pratiquant;
+import repository.PratiquantRepository;
 
 public class InscriptionController {
 
@@ -12,28 +16,50 @@ public class InscriptionController {
     private Label LblErreur;
 
     @FXML
-    private RadioButton genre;
+    private TextField Cp;
 
     @FXML
-    private TextField nom;
+    private TextField Email;
 
     @FXML
-    void Adresse(ActionEvent event) {
+    private RadioButton Male;
 
-    }
+    @FXML
+    private RadioButton Female;
+
+    @FXML
+    private ToggleGroup Genre;
+
+    @FXML
+    private TextField MDP;
+
+    @FXML
+    private TextField Nom;
+
+    @FXML
+    private TextField Prenom;
+
+    @FXML
+    private TextField Rue;
+
+    @FXML
+    private TextField Ville;
 
     @FXML
     void BtnConnexion(ActionEvent event) {
-
+        StartApplication.changeScene("/projet/bowling/hello-view","Connexion");
     }
 
     @FXML
-    void BtnInscription(ActionEvent event) {
-
-    }
-
-    @FXML
-    void prenom(ActionEvent event) {
+    void Validez(ActionEvent event) {
+        PratiquantRepository pratiquantRepository = new PratiquantRepository();
+        Pratiquant p = pratiquantRepository.inscription(Nom.getText(),Prenom.getText(),Cp.getText(),Rue.getText(),Ville.getText(),Email.getText(),MDP.getText(),Genre.getSelectedToggle());
+        if(p != null){
+            StartApplication.changeScene("/projet/bowling/hello-view","Connexion");
+            System.out.println(p.getNom());
+        }else {
+            LblErreur.setVisible(true);
+        }
 
     }
 
