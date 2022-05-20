@@ -37,4 +37,21 @@ public class PratiquantRepository {
         return pratiquant;
     }
 
+    public int inscription(String nom, String prenom, int cp, String rue, String ville, String email, String mdp, Boolean estAdmin)throws SQLException{
+        Pratiquant pratiquant = null;
+        Bdd coBdd = new Bdd();
+        PreparedStatement requeteSql = coBdd.BddCo().prepareStatement("INSERT INTO `pratiquant` (nom,prenom,cp,rue,ville,email,mdp,genre,estAdmin) VALUES (?,?,?,?,?,?,?,?,?)");
+        requeteSql.setString(1, pratiquant.getNom());
+        requeteSql.setString(2, pratiquant.getPrenom());
+        requeteSql.setInt(3, pratiquant.getCp());
+        requeteSql.setString(4, pratiquant.getRue());
+        requeteSql.setString(5, pratiquant.getVille());
+        requeteSql.setString(6, pratiquant.getEmail());
+        requeteSql.setString(7, pratiquant.getMdp());
+        requeteSql.setString(8,pratiquant.getGenre());
+        requeteSql.setBoolean(9, false);
+
+        return requeteSql.executeUpdate();
+    }
+
 }
