@@ -55,7 +55,7 @@ public class InscriptionController {
         PratiquantRepository pratiquantRepository = new PratiquantRepository();
         Pratiquant p = pratiquantRepository.inscription(Nom.getText(),Prenom.getText(),Cp.getText(),Rue.getText(),Ville.getText(),Email.getText(),MDP.getText(),Genre.getSelectedToggle());
         if(p != null){
-            StartApplication.changeScene("/projet/bowling/hello-view","Connexion");
+            StartApplication.changeScene("/projet/bowling/inscription","Inscription");
             System.out.println(p.getNom());
         }else {
             LblErreur.setVisible(true);
