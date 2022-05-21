@@ -30,6 +30,11 @@ public class ConnexionController {
             StartApplication.changeScene("/projet/bowling/accueilController", "Bowling!", new accueilController(p));
             System.out.println(p.getNom());
         }else {
+            LblErreur.setText("Identifiant Incorrect");
+            LblErreur.setVisible(true);
+        }
+        if (fldEmail.getText().isEmpty() || fldMdp.getText().isEmpty()){
+            LblErreur.setText("Case non remplie(s)");
             LblErreur.setVisible(true);
         }
     }

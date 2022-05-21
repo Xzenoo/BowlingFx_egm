@@ -64,6 +64,7 @@ public class InscriptionController {
         }
         Pratiquant pratiquant = new Pratiquant(fldNom.getText(), fldPrenom.getText(), fldCp.getText(), fldRue.getText(), fldVille.getText(), fldEmail.getText(), fldMdp.getText(), genre);
         if (fldNom.getText().isEmpty() || fldPrenom.getText().isEmpty() || fldCp.getText().isEmpty() || fldRue.getText().isEmpty() || fldVille.getText().isEmpty() || fldEmail.getText().isEmpty() || fldMdp.getText().isEmpty()){
+            LblErreur.setText("Case non remplie(s)");
             LblErreur.setVisible(true);
         }else{
             pratiquant = pratiquantRepository.inscription(pratiquant);
