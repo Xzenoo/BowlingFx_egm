@@ -10,40 +10,44 @@ import javafx.scene.control.ToggleGroup;
 import modele.Pratiquant;
 import repository.PratiquantRepository;
 
+import java.sql.SQLException;
+
 public class InscriptionController {
 
     @FXML
     private Label LblErreur;
 
     @FXML
-    private TextField Cp;
+    private TextField fldCp;
 
     @FXML
-    private TextField Email;
+    private TextField fldEmail;
 
     @FXML
-    private RadioButton Male;
+    private RadioButton rbtnMale;
 
     @FXML
-    private RadioButton Female;
+    private RadioButton rbtnFemale;
 
     @FXML
     private ToggleGroup Genre;
 
     @FXML
-    private TextField MDP;
+    private TextField fldMdp;
 
     @FXML
-    private TextField Nom;
+    private TextField fldNom;
 
     @FXML
-    private TextField Prenom;
+    private TextField fldPrenom;
 
     @FXML
-    private TextField Rue;
+    private TextField fldRue;
 
     @FXML
-    private TextField Ville;
+    private TextField fldVille;
+
+    private String genre;
 
     @FXML
     void BtnConnexion(ActionEvent event) {
@@ -51,14 +55,20 @@ public class InscriptionController {
     }
 
     @FXML
-    void Validez(ActionEvent event) {
-        Pratiquant pratiquant = new Pratiquant(Nom.getText(),Prenom.getText(),Cp.getText(),Rue.getText(),Ville.getText(),Email.getText(),MDP.getText(),Genre.getSelectedToggle());
-        PratiquantRepository p = PratiquantRepository.inscription();
-        if(p != null){
-            StartApplication.changeScene("/projet/bowling/inscription","Inscription");
-            System.out.println(p.getNom());
-        }else {
+    void Validez(ActionEvent event) throws SQLException {
+        PratiquantRepository pratiquantRepository = new PratiquantRepository();
+        if(rbtnMale.isSelected()){
+            genre = "Homme";
+        }else{
+            genre = "Femme";
+        }
+        Pratiquant pratiquant = new Pratiquant(fldNom.getText(), fldPrenom.getText(), fldCp.getText(), fldRue.getText(), fldVille.getText(), fldEmail.getText(), fldMdp.getText(), genre);
+        if (fldNom.getText().isEmpty() || fldPrenom.getText().isEmpty() || fldCp.getText().isEmpty() || fldRue.getText().isEmpty() || fldVille.getText().isEmpty() || fldEmail.getText().isEmpty() || fldMdp.getText().isEmpty()){
             LblErreur.setVisible(true);
+        }else{
+            pratiquant = pratiquantRepository.inscription(pratiquant);
+            StartApplication.changeScene("/projet/bowling/hello-view","Bowling!!");
+            System.out.println(pratiquant.getNom());
         }
 
     }

@@ -6,7 +6,7 @@ public class Pratiquant {
     private int id_Pratiquant;
     private String nom;
     private String prenom;
-    private int cp;
+    private String cp;
     private String rue;
     private String ville;
     private String email;
@@ -14,7 +14,7 @@ public class Pratiquant {
     private String genre;
     private boolean estAdmin;
 
-    public Pratiquant(int id_pratiquant, String nom, String prenom, int cp, String rue, String ville, String email,String mdp, String genre, boolean estAdmin) {
+    public Pratiquant(int id_pratiquant, String nom, String prenom, String cp, String rue, String ville, String email,String mdp, String genre, boolean estAdmin) {
         this.id_Pratiquant =id_pratiquant;
         this.nom = nom;
         this.prenom =prenom;
@@ -27,7 +27,7 @@ public class Pratiquant {
         this.estAdmin = estAdmin;
     }
 
-    public Pratiquant(String nom, String prenom, int cp, String rue, String ville, String email,String mdp, String genre) {
+    public Pratiquant(String nom, String prenom, String cp, String rue, String ville, String email,String mdp, String genre) {
         this.nom = nom;
         this.prenom =prenom;
         this.cp = cp;
@@ -37,6 +37,7 @@ public class Pratiquant {
         this.mdp = mdp;
         this.genre = genre;
     }
+
 
     public int getId_Pratiquant() {
         return id_Pratiquant;
@@ -62,11 +63,11 @@ public class Pratiquant {
         this.prenom = prenom;
     }
 
-    public int getCp() {
+    public String getCp() {
         return cp;
     }
 
-    public void setCp(int cp) {
+    public void setCp(String cp) {
         this.cp = cp;
     }
 
@@ -117,5 +118,4 @@ public class Pratiquant {
     public void setGenre(String genre) {
         this.genre = genre;
     }
-
 }

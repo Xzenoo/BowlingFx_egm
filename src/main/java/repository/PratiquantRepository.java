@@ -1,9 +1,7 @@
 package repository;
 
 import BDD.Bdd;
-import apply.StartApplication;
 import modele.Pratiquant;
-import projet.bowling.accueilController;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,7 +25,7 @@ public class PratiquantRepository {
             requeteSQL.setString(2,mdp);
             ResultSet mesResultats = requeteSQL.executeQuery();
             if (mesResultats.next()) {
-                pratiquant = new Pratiquant(mesResultats.getInt("id_pratiquant"), mesResultats.getString("nom"), mesResultats.getString("prenom"),mesResultats.getInt("cp"),mesResultats.getString("rue"),mesResultats.getString("ville"),mesResultats.getString("email"), mesResultats.getString("mdp"),mesResultats.getString("genre"),mesResultats.getBoolean("estAdmin"));
+                pratiquant = new Pratiquant(mesResultats.getInt("id_pratiquant"), mesResultats.getString("nom"), mesResultats.getString("prenom"),mesResultats.getString("cp"),mesResultats.getString("rue"),mesResultats.getString("ville"),mesResultats.getString("email"), mesResultats.getString("mdp"),mesResultats.getString("genre"),mesResultats.getBoolean("estAdmin"));
                 System.out.println(pratiquant.getId_Pratiquant());
             }
         }catch (SQLException e){
@@ -37,21 +35,21 @@ public class PratiquantRepository {
         return pratiquant;
     }
 
-    public int inscription()throws SQLException{
-        Pratiquant pratiquant = null;
+    public Pratiquant inscription(Pratiquant pratiquant)throws SQLException{
         Bdd coBdd = new Bdd();
         PreparedStatement requeteSql = coBdd.BddCo().prepareStatement("INSERT INTO `pratiquant` (nom,prenom,cp,rue,ville,email,mdp,genre,estAdmin) VALUES (?,?,?,?,?,?,?,?,?)");
         requeteSql.setString(1, pratiquant.getNom());
         requeteSql.setString(2, pratiquant.getPrenom());
-        requeteSql.setInt(3, pratiquant.getCp());
+        requeteSql.setString(3, pratiquant.getCp());
         requeteSql.setString(4, pratiquant.getRue());
         requeteSql.setString(5, pratiquant.getVille());
         requeteSql.setString(6, pratiquant.getEmail());
         requeteSql.setString(7, pratiquant.getMdp());
         requeteSql.setString(8,pratiquant.getGenre());
         requeteSql.setBoolean(9, false);
+        requeteSql.executeUpdate();
 
-        return requeteSql.executeUpdate();
+        return pratiquant;
     }
 
 }
